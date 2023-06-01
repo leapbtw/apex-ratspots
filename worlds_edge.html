@@ -1,43 +1,82 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Worlds Edge rat spots</title>
-    <style>
-        .pin {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            background-color: lightskyblue;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-    </style>
+  <title>Map with Pins</title>
+  <style>
+    .map-container {
+        position: relative;
+        width: 100%;
+        max-width: 1000px; /* Adjust this value as needed */
+    }
+
+    .map-image {
+        max-width: 100%;
+        height: auto;
+    }
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #map {
+      max-width: 95%;
+      height: auto;
+      margin: auto; /* Center the map */
+      position: relative; /* Position the pins relative to the map */
+    }
+    .pin {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      width: 15px;
+      height: 15px;
+      background-color: red;
+      border-radius: 50%;
+    }
+    
+  </style>
 </head>
 <body>
-    <div style="position: relative;">
-        <img src="worlds_edge.jpeg" alt="Map" />
-        <!-- credits for the spots: https://www.youtube.com/watch?v=YhJInKAwALw -->
-        <a class="pin" href="WE_spots/fragment_1.png" style="top: 1476px; left: 1656px;"></a>
-        <a class="pin" href="WE_spots/fragment_2.png" style="top: 1293px; left: 1782px;"></a>
-        <a class="pin" href="WE_spots/fragment_3.png" style="top: 915px; left: 1800px;"></a>
-        <a class="pin" href="WE_spots/landslide_1.png" style="top: 1520px; left: 1100px;"></a>
-        <a class="pin" href="WE_spots/landslide_2.png" style="top: 1600px; left: 1010px;"></a>
-        <a class="pin" href="WE_spots/landslide_3.png" style="top: 1470px; left: 1100px;"></a>
-        <a class="pin" href="WE_spots/harvester_1.png" style="top: 1680px; left: 1780px;"></a>
-        <a class="pin" href="WE_spots/harvester_2.png" style="top: 1650px; left: 960px;"></a>
-        <a class="pin" href="WE_spots/harvester_3.png" style="top: 1620px; left: 1870px;"></a>
-        <a class="pin" href="WE_spots/lava_1.png" style="top: 1962px; left: 2064px;"></a>
-        <a class="pin" href="WE_spots/thermal_station_1.png" style="top: 1917px; left: 549px;"></a>
-        <a class="pin" href="WE_spots/thermal_station_2.png" style="top: 2088px; left: 1131px;"></a>
-        <a class="pin" href="WE_spots/dome_1.png" style="top: 2752px; left: 2228px;"></a>
-        <a class="pin" href="WE_spots/skyhook_1.png" style="top: 752px; left: 888px;"></a>
-        <a class="pin" href="WE_spots/epicenter_1.png" style="top: 760px; left: 1660px;"></a>
-        <a class="pin" href="WE_spots/epicenter_1.png" style="top: 760px; left: 1660px;"></a>
-        <a class="pin" href="WE_spots/epicenter_1.png" style="top: 760px; left: 1660px;"></a>
-        <a class="pin" href="WE_spots/epicenter_1.png" style="top: 760px; left: 1660px;"></a>
-        <a class="pin" href="WE_spots/epicenter_1.png" style="top: 760px; left: 1660px;"></a>
+  <div class="map-container">
+    <div id="map">
+      <img class="map-image" src="worlds_edge.jpeg" alt="Map" />
+      <!-- credits for the spots: https://www.youtube.com/watch?v=YhJInKAwALw -->
+      <a class="pin" href="WE_spots/fragment_1.png" style="top: 52.21%; left: 58.37%;"></a>
+      <a class="pin" href="WE_spots/fragment_2.png" style="top: 45.68%; left: 62.79%;"></a>
+      <a class="pin" href="WE_spots/fragment_3.png" style="top: 32.74%; left: 63.00%;"></a>
+      <a class="pin" href="WE_spots/landslide_1.png" style="top: 53.68%; left: 38.68%;"></a>
+      <a class="pin" href="WE_spots/landslide_2.png" style="top: 56.42%; left: 35.84%;"></a>
+      <a class="pin" href="WE_spots/landslide_3.png" style="top: 52.00%; left: 38.79%;"></a>
+      <a class="pin" href="WE_spots/harvester_1.png" style="top: 59.37%; left: 63.32%;"></a>
+      <a class="pin" href="WE_spots/harvester_2.png" style="top: 58.95%; left: 33.74%;"></a>
+      <a class="pin" href="WE_spots/harvester_3.png" style="top: 57.16%; left: 66.05%;"></a>
+      <a class="pin" href="WE_spots/lava_1.png" style="top: 67.89%; left: 71.63%;"></a>
+      <a class="pin" href="WE_spots/thermal_station_1.png" style="top: 66.32%; left: 19.53%;"></a>
+      <a class="pin" href="WE_spots/thermal_station_2.png" style="top: 73.68%; left: 40.47%;"></a>
+      <a class="pin" href="WE_spots/dome_1.png" style="top: 96.42%; left: 77.11%;"></a>
+      <a class="pin" href="WE_spots/skyhook_1.png" style="top: 26.1%; left: 31%;"></a>
+      <a class="pin" href="WE_spots/epicenter_1.png" style="top: 27.47%; left: 58.68%;"></a>
 
-        <!-- new rat spots to add (not added yet) https://www.youtube.com/watch?v=m8qwQde9K_s -->
+      <!-- new rat spots to add (not added yet) https://www.youtube.com/watch?v=m8qwQde9K_s -->
     </div>
+  </div>
+
+  <script>
+    window.addEventListener('load', function() {
+      var mapImage = document.querySelector('.map-image');
+      var mapWidth = mapImage.clientWidth;
+      var mapHeight = mapImage.clientHeight;
+
+      var pins = document.getElementsByClassName('pin');
+      for (var i = 0; i < pins.length; i++) {
+        var pin = pins[i];
+        var pinTop = parseFloat(pin.style.top);
+        var pinLeft = parseFloat(pin.style.left);
+        pin.style.top = (pinTop * mapHeight / 100) + 'px';
+        pin.style.left = (pinLeft * mapWidth / 100) + 'px';
+      }
+    });
+  </script>
 </body>
 </html>

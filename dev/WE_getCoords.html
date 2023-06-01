@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Map with Pins</title>
+  <style>
+    .map-container {
+        position: relative;
+        width: 100%;
+        max-width: 1000px; /* Adjust this value as needed */
+    }
+
+    .map-image {
+        max-width: 100%;
+        height: auto;
+    }
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #map {
+      max-width: 95%;
+      height: auto;
+      margin: auto; /* Center the map */
+      position: relative; /* Position the pins relative to the map */
+    }
+    .pin {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      width: 15px;
+      height: 15px;
+      background-color: red;
+      border-radius: 50%;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="map-container">
+    <div id="map">
+      <img class="map-image" src="worlds_edge.jpeg" alt="Map" />
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('load', function() {
+      var mapImage = document.querySelector('.map-image');
+      var mapWidth = mapImage.clientWidth;
+      var mapHeight = mapImage.clientHeight;
+
+      var pins = document.getElementsByClassName('pin');
+      for (var i = 0; i < pins.length; i++) {
+        var pin = pins[i];
+        var pinTop = parseFloat(pin.style.top);
+        var pinLeft = parseFloat(pin.style.left);
+        pin.style.top = (pinTop * mapHeight / 100) + 'px';
+        pin.style.left = (pinLeft * mapWidth / 100) + 'px';
+      }
+
+      mapImage.addEventListener('click', function(event) {
+        var rect = mapImage.getBoundingClientRect();
+        var x = event.clientX - rect.left;
+        var y = event.clientY - rect.top;
+        var percentageX = (x / mapWidth) * 100;
+        var percentageY = (y / mapHeight) * 100;
+        alert('Coordinates:    top: ' + percentageY.toFixed(2) + '%; left: ' + percentageX.toFixed(2) + '%')
+      });
+    });
+  </script>
+</body>
+</html>

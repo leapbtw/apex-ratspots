@@ -31,8 +31,41 @@
       transform: translate(-50%, -50%);
       width: 15px;
       height: 15px;
-      background-color: magenta;
+      background-color: greenyellow;
       border-radius: 50%;
+      cursor: pointer;
+    }
+    .pin_movement {
+      width: 15px;
+      height: 15px;
+      background-color: white;
+    }
+    .pin_ash {
+      width: 15px;
+      height: 15px;
+      background-color: lightskyblue;
+    }
+    .pin_loba {
+      width: 15px;
+      height: 15px;
+      background-color: magenta;
+    }
+    .pin:hover .tooltip {
+      display: block;
+    }
+    .tooltip {
+      display: none;
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      padding: 5px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      text-align: center;
+      font-size: 12px;
+      border-radius: 4px;
     }
     
   </style>
@@ -43,21 +76,51 @@
     <div id="map">
       <img class="map-image" src="worlds_edge.jpeg" alt="Map" />
       <!-- credits for the spots: https://www.youtube.com/watch?v=YhJInKAwALw -->
-      <a class="pin" href="WE_spots/fragment_1.png" style="top: 52.21%; left: 58.37%;"></a>
-      <a class="pin" href="WE_spots/fragment_2.png" style="top: 45.68%; left: 62.79%;"></a>
-      <a class="pin" href="WE_spots/fragment_3.png" style="top: 32.74%; left: 63.00%;"></a>
-      <a class="pin" href="WE_spots/landslide_1.png" style="top: 53.68%; left: 38.68%;"></a>
-      <a class="pin" href="WE_spots/landslide_3.png" style="top: 52.00%; left: 38.79%;"></a>
-      <a class="pin" href="WE_spots/staging_1.png" style="top: 56.42%; left: 35.84%;"></a>
-      <a class="pin" href="WE_spots/staging_2.png" style="top: 58%; left: 33.74%;"></a>
-      <a class="pin" href="WE_spots/lava_siphon_1.png" style="top: 59.37%; left: 63.32%;"></a>
-      <a class="pin" href="WE_spots/lava_siphon_2.png" style="top: 57.16%; left: 66.05%;"></a>
-      <a class="pin" href="WE_spots/geyser_1.png" style="top: 67.89%; left: 71.63%;"></a>
-      <a class="pin" href="WE_spots/thermal_station_1.png" style="top: 66.32%; left: 19.53%;"></a>
-      <a class="pin" href="WE_spots/tree_1.png" style="top: 73.68%; left: 40.47%;"></a>
-      <a class="pin" href="WE_spots/dome_1.png" style="top: 96.42%; left: 77.11%;"></a>
-      <a class="pin" href="WE_spots/skyhook_1.png" style="top: 26.1%; left: 31%;"></a>
-      <a class="pin" href="WE_spots/epicenter_1.png" style="top: 27.47%; left: 58.68%;"></a>
+      <a class="pin pin_movement" href="WE_spots/fragment_1.png" style="top: 52.21%; left: 58.37%;">
+        <div class="tooltip">Path, Ash, Valk, Horizon, Octane, Loba</div>
+      </a>
+      <a class="pin pin_ash" href="WE_spots/fragment_2.png" style="top: 45.68%; left: 62.79%;">
+        <div class="tooltip">Ash</div>
+      </a>
+      <a class="pin pin_movement" href="WE_spots/fragment_3.png" style="top: 32.74%; left: 63.00%;">
+        <div class="tooltip">Path, Ash, Valk, Horizon, Loba</div>
+      </a>
+      <a class="pin pin_movement" href="WE_spots/landslide_1.png" style="top: 53.68%; left: 38.68%;">
+        <div class="tooltip">Ash, Valk, Horizon</div>
+      </a>
+      <a class="pin" href="WE_spots/landslide_3.png" style="top: 52.00%; left: 38.79%;">
+        <div class="tooltip">Any</div>
+      </a>
+      <a class="pin pin_ash" href="WE_spots/staging_1.png" style="top: 56.42%; left: 35.84%;">
+        <div class="tooltip">Ash</div>
+      </a>
+      <a class="pin" href="WE_spots/staging_2.png" style="top: 58%; left: 33.74%;">
+        <div class="tooltip">Any</div>
+      </a>
+      <a class="pin_movement pin" href="WE_spots/lava_siphon_1.png" style="top: 59.37%; left: 63.32%;">
+        <div class="tooltip">Path, Ash, Valk, Horizon</div>
+      </a>
+      <a class="pin_movement pin" href="WE_spots/lava_siphon_2.png" style="top: 57.16%; left: 66.05%;">
+        <div class="tooltip">Path, Ash, Valk, Horizon, Octane, Loba</div>
+      </a>
+      <a class="pin_movement pin" href="WE_spots/geyser_1.png" style="top: 67.89%; left: 71.63%;">
+        <div class="tooltip">Path, Ash, Valk, Horizon, Octane, Loba</div>
+      </a>
+      <a class="pin" href="WE_spots/thermal_station_1.png" style="top: 66.32%; left: 19.53%;">
+        <div class="tooltip">Any</div>
+      </a>
+      <a class="pin" href="WE_spots/tree_1.png" style="top: 73.68%; left: 40.47%;">
+        <div class="tooltip">Any</div>
+      </a>
+      <a class="pin" href="WE_spots/dome_1.png" style="top: 96.42%; left: 77.11%;">
+        <div class="tooltip">Any</div>
+      </a>
+      <a class="pin_movement pin" href="WE_spots/skyhook_1.png" style="top: 26.1%; left: 31%;">
+        <div class="tooltip">Ash, Valk, Horizon</div>
+      </a>
+      <a class="pin_movement" href="WE_spots/epicenter_1.png" style="top: 27.47%; left: 58.68%;">
+        <div class="tooltip">Path, Ash, Valk, Horizon, Loba</div>
+      </a>
 
       <!-- new rat spots to add (not added yet) https://www.youtube.com/watch?v=m8qwQde9K_s -->
     </div>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>King's Canyon ratspots</title>
+  <style>
+    body {
+      background-color: black;
+    }
+
+    h4, h2 {
+      color: white;
+    }
+    .map-container {
+        position: relative;
+        width: 100%;
+        max-width: 1000px; /* Adjust this value as needed */
+    }
+
+    .map-image {
+        max-width: 100%;
+        height: auto;
+    }
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #map {
+      max-width: 85%;
+      height: auto;
+      margin: auto; /* Center the map */
+      position: relative; /* Position the pins relative to the map */
+    }
+    .pin {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      width: 15px;
+      height: 15px;
+      background-color: greenyellow;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .pin_movement {
+      width: 15px;
+      height: 15px;
+      background-color: white;
+    }
+    .pin_ash {
+      width: 15px;
+      height: 15px;
+      background-color: lightskyblue;
+    }
+    .pin_loba {
+      width: 15px;
+      height: 15px;
+      background-color: magenta;
+    }
+    .pin:hover .tooltip {
+      display: block;
+    }
+    .tooltip {
+      display: none;
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      padding: 5px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      text-align: center;
+      font-size: 12px;
+      border-radius: 4px;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="map-container">
+    <h2>click a spot on the map to see a screenshot of the rat spot, hover to see which legends can get there</h2>
+    <h4>the trees on the map are climbable and you can hide in them</h4>
+    <div id="map">
+      <img class="map-image" src="maps/kings_canyon.png" alt="Map" />
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('load', function() {
+      var mapImage = document.querySelector('.map-image');
+      var mapWidth = mapImage.clientWidth;
+      var mapHeight = mapImage.clientHeight;
+
+      var pins = document.getElementsByClassName('pin');
+      for (var i = 0; i < pins.length; i++) {
+        var pin = pins[i];
+        var pinTop = parseFloat(pin.style.top);
+        var pinLeft = parseFloat(pin.style.left);
+        pin.style.top = (pinTop * mapHeight / 100) + 'px';
+        pin.style.left = (pinLeft * mapWidth / 100) + 'px';
+      }
+    });
+  </script>
+</body>
+</html>
